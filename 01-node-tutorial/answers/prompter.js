@@ -44,11 +44,19 @@ const server = http.createServer((req, res) => {
     getBody(req, (body) => {
       console.log("The body of the post is ", body);
       // here, you can add your own logic
-      if (body["item"]) {
-        item = body["item"];
+      // if (body["item"]) {
+      //   item = body["item"];
+      // } else {
+      //   item = "Nothing was entered.";
+      // }
+      if(parseInt(body["item"]) < 100 && parseInt(body["item"]) > 0){
+        item = parseInt(body["item"]);
+      } else if(parseInt(body["item"]) > 100){
+        item = "number is bigger than 100"
       } else {
-        item = "Nothing was entered.";
+        item = "num is less than 0";
       }
+      
       // Your code changes would end here
       res.writeHead(303, {
         Location: "/",

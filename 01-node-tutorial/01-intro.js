@@ -5,5 +5,5 @@ if (amount < 10) {
 } else {
   console.log('large number')
 }
-
+//run console, works fine
 console.log(`hey it's my first node app!!!`)
