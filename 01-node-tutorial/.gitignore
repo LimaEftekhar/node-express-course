@@ -1,4 +1,5 @@
 /node_modules
 /content/big.txt
+temp.txt
 answers/temporary/*
 !answers/temporary/.keep
