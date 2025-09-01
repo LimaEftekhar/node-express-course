@@ -17,13 +17,13 @@
 
     <script>
     function getProducts(){
-        fetch('http://localhost:3000/api/v1/products')
+        fetch('/api/v1/products')
         .then(response =>response.json())
         .then(data =>{
             document.getElementById('products').innerHTML = 
             data.map(p =>`<p>${p.id}) ${p.name}- $${p.price}<p>`).join("")
         })
-        .catch(err => console.err("Error: ", err))
+        .catch(err => console.error("Error: ", err))
     }
 </script>
 </body>
