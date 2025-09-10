@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+</head>
+<body>
+    <h1>Week 3</h1>
+    <h2>Introduction to Express</h2>
+    <p>Begin learning about Express.js and how it connects to Node.js</p>
+    <h2>Products</h2>
+    <button onclick="getProducts()">Show Products</button>
+    <div id="products">
+
+    </div>
+
+    <script>
+    function getProducts(){
+        fetch('/api/v1/products')
+        .then(response =>response.json())
+        .then(data =>{
+            document.getElementById('products').innerHTML = 
+            data.map(p =>`<p>${p.id}) ${p.name}- $${p.price}<p>`).join("")
+        })
+        .catch(err => console.error("Error: ", err))
+    }
+</script>
+</body>
+
+</html>
